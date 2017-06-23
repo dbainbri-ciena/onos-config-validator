@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: config-validator
-            image: dbainbriciena/ones-config-validator:1.0
+            image: dbainbriciena/onos-config-validator:1.0
             env:
             - name: ONOS
               value: "karaf:karaf@fabric-controller:8181"
@@ -23,5 +23,5 @@ spec:
           volumes:
           - name: git-volume
             gitRepo:
-              repository: "https://github.com/dbainbri-ciena/ones-config-validator"
+              repository: "https://github.com/dbainbri-ciena/onos-config-validator"
               directory: .
