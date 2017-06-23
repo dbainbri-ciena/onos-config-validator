@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: config-push
+spec:
+  template:
+    metadata:
+      name: config-push
+    spec:
+      containers:
+      - name: config-validator
+        image: config-validator:1.0
+        env:
+        - name: ONOS
+          value: "karaf:karaf@fabric-controller:8181"
+        - name: DESIRED_CONFIG
+          value: "/onos-config/desired.json" 
+        volumeMounts:
+        - mountPath: /onos-config
+          name: git-volume
+      restartPolicy: Never
+      volumes:
+      - name: git-volume
+        gitRepo:
+          repository: "https://github.com/davidkbainbridge/pod-fabric-config"
+          directory: .
+          #revision: "22f1d8406d464b0c0874075539c1f2e96c253775"

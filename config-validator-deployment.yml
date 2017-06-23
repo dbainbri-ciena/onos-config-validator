@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+    name: fabric-config-validation
+spec:
+    replicas: 
+    template:
+        metadata:
+            labels:
+                app: fabric-config-validation
+        spec:
+            containers:
+            - name: config-validator
+              image: config-validator:1.0
+              env:
+              - name: ONOS
+                value: "karaf:karaf@fabric-controller:8181"
+              - name: DESIRED_CONFIG
+                value: "/onos-config/desired.json"
+              volumeMounts:
+              - mountPath: /onos-config
+                name: git-volume
+            restartPolicy: Always
+            volumes:
+            - name: git-volume
+              gitRepo:
+                repository: "https://github.com/davidkbainbridge/pod-fabric-config"
+                directory: .

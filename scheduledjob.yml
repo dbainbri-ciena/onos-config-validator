@@ -1,0 +1,27 @@
+apiVersion: batch/v2alpha1
+kind: ScheduledJob
+metadata:
+  name: onos-config-validation
+spec:
+  schedule: "*/1 * * * ?"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: config-validator
+            image: config-validator:1.0
+            env:
+            - name: ONOS
+              value: "karaf:karaf@fabric-controller:8181"
+            - name: DESIRED_CONFIG
+              value: "/onos-config/desired.json"
+            volumeMounts:
+            - mountPath: /onos-config
+              name: git-volume
+          restartPolicy: OnFailure
+          volumes:
+          - name: git-volume
+            gitRepo:
+              repository: "https://github.com/davidkbainbridge/pod-fabric-config"
+              directory: .
