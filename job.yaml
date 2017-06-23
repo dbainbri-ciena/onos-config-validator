@@ -22,6 +22,5 @@ spec:
       volumes:
       - name: git-volume
         gitRepo:
-          repository: "https://github.com/davidkbainbridge/pod-fabric-config"
+          repository: "https://github.com/dbainbri-ciena/ones-config-validator"
           directory: .
-          #revision: "22f1d8406d464b0c0874075539c1f2e96c253775"
