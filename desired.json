@@ -1,0 +1,121 @@
+{
+    "devices": {
+        "of:0000cc37ab7cbde6": {
+            "segmentrouting": {
+                "name": "device-cc37ab7cbde6",
+                "ipv4NodeSid": 100,
+                "ipv4Loopback": "10.6.1.254",
+                "routerMac": "cc:37:ab:7c:bd:e6",
+                "isEdgeRouter": true,
+                "adjacencySids": []
+            },
+            "basic" : {
+                "driver" : "ofdpa3"
+            }
+        },
+        "of:0000cc37ab7cbf6c": {
+            "segmentrouting": {
+                "name": "device-cc37ab7cbf6c",
+                "ipv4NodeSid": 101,
+                "ipv4Loopback": "10.6.2.254",
+                "routerMac": "cc:37:ab:7c:bf:6c",
+                "isEdgeRouter": false,
+                "adjacencySids": []
+            },
+            "basic" : {
+                "driver" : "ofdpa3"
+            }
+
+        },
+        "of:0000cc37ab7cb74c": {
+            "segmentrouting": {
+                "name": "device-cc37ab7cb74c",
+                "ipv4NodeSid": 102,
+                "ipv4Loopback": "10.6.1.254",
+                "routerMac": "cc:37:ab:7c:b7:4c",
+                "isEdgeRouter": false,
+                "adjacencySids": []
+            },
+            "basic" : {
+                "driver" : "ofdpa3"
+            }
+
+        },
+        "of:0000cc37ab7cba58": {
+            "segmentrouting": {
+                "name": "device-cc37ab7cba58",
+                "ipv4NodeSid": 103,
+                "ipv4Loopback": "10.6.2.254",
+                "routerMac": "cc:37:ab:7c:ba:58",
+                "isEdgeRouter": true,
+                "adjacencySids": []
+            },
+            "basic" : {
+                "driver" : "ofdpa3"
+            }
+
+        }
+    },
+    "hosts": {
+        "3C:FD:FE:9E:95:98/None": {
+            "basic" : {
+                "ips": ["10.6.1.3"],
+                "location": "of:0000cc37ab7cba58/2"
+            }
+        },
+        "3C:FD:FE:9E:98:68/None": {
+            "basic" : {
+                "ips": ["10.6.1.2"],
+                "location": "of:0000cc37ab7cbde6/2"
+            }
+        },
+        "3C:FD:FE:9E:94:30/None": {
+            "basic" : {
+                "ips": ["10.6.1.1"],
+                "location": "of:0000cc37ab7cba58/1"
+            }
+        },
+        "3C:FD:FE:9E:94:28/None": {
+            "basic" : {
+                "ips": ["10.6.1.4"],
+                "location": "of:0000cc37ab7cba58/4"
+            }
+        }
+    },
+    "ports": {
+        "of:0000cc37ab7cba58/2": {
+            "interfaces": [
+                {
+                    "ips": [ "10.6.1.254/24" ],
+                    "vlan-untagged": 10
+                }
+            ]
+        },
+        "of:0000cc37ab7cbde6/2": {
+            "interfaces": [
+                {
+                    "ips": [ "10.6.2.254/24" ],
+                    "vlan-untagged": 10
+                }
+            ]
+        },
+        "of:0000cc37ab7cba58/1": {
+            "interfaces": [
+                {
+                    "ips": [ "10.6.1.254/24" ],
+                    "vlan-untagged": 10
+                }
+            ]
+        },
+        "of:0000cc37ab7cba58/4": {
+            "interfaces": [
+                {
+                    "ips": [ "10.6.1.254/24" ],
+                    "vlan-untagged": 10
+                }
+            ]
+        }
+    },
+    "links": {},
+    "apps": {}
+}
