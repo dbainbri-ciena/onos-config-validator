@@ -11,7 +11,7 @@ spec:
         spec:
             containers:
             - name: config-validator
-              image: config-validator:1.0
+              image: dbainbriciena/ones-config-validator:1.0
               env:
               - name: ONOS
                 value: "karaf:karaf@fabric-controller:8181"

@@ -3,4 +3,4 @@ help:
 	@echo "build - build the docker image"
 
 build:
-	docker build -t config-validator:1.0 .
+	docker build -t dbainbriciena/ones-config-validator:1.0 .
