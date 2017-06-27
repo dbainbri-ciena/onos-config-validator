@@ -59,8 +59,8 @@
     "hosts": {
         "3C:FD:FE:9E:95:98/None": {
             "basic" : {
-                "ips": ["10.6.1.3"],
-                "location": "of:0000cc37ab7cba58/2"
+                "ips": ["10.6.2.3"],
+                "location": "of:0000cc37ab7cba58/1"
             }
         },
         "3C:FD:FE:9E:98:68/None": {
@@ -77,8 +77,8 @@
         },
         "3C:FD:FE:9E:94:28/None": {
             "basic" : {
-                "ips": ["10.6.1.4"],
-                "location": "of:0000cc37ab7cba58/4"
+                "ips": ["10.6.2.4"],
+                "location": "of:0000cc37ab7cba58/2"
             }
         }
     },
