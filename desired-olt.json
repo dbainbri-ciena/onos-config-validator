@@ -94,7 +94,10 @@
           "ips": [
             "10.6.1.254/24"
           ],
-          "vlan-untagged": 10
+          "vlan-tagged": [
+            220
+          ],
+          "vlan-native": 10
         }
       ]
     },
@@ -127,8 +130,33 @@
           "vlan-untagged": 10
         }
       ]
+    },
+    "of:0000cc37ab7cbde6/129": {
+      "interfaces": [
+        {
+          "name": "OLT",
+          "vlan-tagged": [
+            220
+          ]
+        }
+      ]
     }
   },
   "links": {},
-  "apps": {}
+  "apps": {
+    "org.onosproject.segmentrouting": {
+      "xconnect": {
+        "of:0000000000000001": [
+          {
+            "vlan": 10,
+            "ports": [
+              1,
+              129
+            ],
+            "name": "OLT1"
+          }
+        ]
+      }
+    }
+  }
 }
