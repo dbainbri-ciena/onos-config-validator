@@ -95,7 +95,7 @@
             "10.6.1.254/24"
           ],
           "vlan-tagged": [
-            220
+            220, 4000, 4090
           ],
           "vlan-native": 10
         }
@@ -107,7 +107,10 @@
           "ips": [
             "10.6.1.254/24"
           ],
-          "vlan-untagged": 10
+          "vlan-tagged": [
+            220, 4000, 4090
+          ],
+          "vlan-native": 10
         }
       ]
     },
@@ -117,7 +120,10 @@
           "ips": [
             "10.6.2.254/24"
           ],
-          "vlan-untagged": 10
+          "vlan-tagged": [
+            220, 4000, 4090
+          ],
+          "vlan-native": 10
         }
       ]
     },
@@ -127,36 +133,24 @@
           "ips": [
             "10.6.2.254/24"
           ],
-          "vlan-untagged": 10
+          "vlan-tagged": [
+            220, 4000, 4090
+          ],
+          "vlan-native": 10
         }
       ]
     },
     "of:0000cc37ab7cbde6/129": {
       "interfaces": [
         {
-          "name": "OLT",
+          "name": "OLT1",
           "vlan-tagged": [
-            220
+            220, 4000, 4090
           ]
         }
       ]
     }
   },
   "links": {},
-  "apps": {
-    "org.onosproject.segmentrouting": {
-      "xconnect": {
-        "of:0000000000000001": [
-          {
-            "vlan": 10,
-            "ports": [
-              1,
-              129
-            ],
-            "name": "OLT1"
-          }
-        ]
-      }
-    }
-  }
+  "apps": {}
 }
