@@ -1,65 +1,66 @@
 {
+  "apps": {},
   "devices": {
-    "of:0000cc37ab7cbde6": {
-      "segmentrouting": {
-        "name": "device-cc37ab7cbde6",
-        "ipv4NodeSid": 100,
-        "ipv4Loopback": "10.6.1.254",
-        "routerMac": "cc:37:ab:7c:bd:e6",
-        "isEdgeRouter": true,
-        "adjacencySids": []
-      },
-      "basic": {
-        "driver": "ofdpa3"
-      }
-    },
-    "of:0000cc37ab7cbf6c": {
-      "segmentrouting": {
-        "name": "device-cc37ab7cbf6c",
-        "ipv4NodeSid": 101,
-        "ipv4Loopback": "10.6.1.254",
-        "routerMac": "cc:37:ab:7c:bf:6c",
-        "isEdgeRouter": false,
-        "adjacencySids": []
-      },
-      "basic": {
-        "driver": "ofdpa3"
-      }
-    },
     "of:0000cc37ab7cb74c": {
-      "segmentrouting": {
-        "name": "device-cc37ab7cb74c",
-        "ipv4NodeSid": 102,
-        "ipv4Loopback": "10.6.2.254",
-        "routerMac": "cc:37:ab:7c:b7:4c",
-        "isEdgeRouter": false,
-        "adjacencySids": []
-      },
       "basic": {
         "driver": "ofdpa3"
+      },
+      "segmentrouting": {
+        "adjacencySids": [],
+        "ipv4Loopback": "10.6.2.254",
+        "ipv4NodeSid": 102,
+        "isEdgeRouter": false,
+        "name": "device-cc37ab7cb74c",
+        "routerMac": "cc:37:ab:7c:b7:4c"
       }
     },
     "of:0000cc37ab7cba58": {
-      "segmentrouting": {
-        "name": "device-cc37ab7cba58",
-        "ipv4NodeSid": 103,
-        "ipv4Loopback": "10.6.2.254",
-        "routerMac": "cc:37:ab:7c:ba:58",
-        "isEdgeRouter": true,
-        "adjacencySids": []
-      },
       "basic": {
         "driver": "ofdpa3"
+      },
+      "segmentrouting": {
+        "adjacencySids": [],
+        "ipv4Loopback": "10.6.2.254",
+        "ipv4NodeSid": 103,
+        "isEdgeRouter": true,
+        "name": "device-cc37ab7cba58",
+        "routerMac": "cc:37:ab:7c:ba:58"
+      }
+    },
+    "of:0000cc37ab7cbde6": {
+      "basic": {
+        "driver": "ofdpa3"
+      },
+      "segmentrouting": {
+        "adjacencySids": [],
+        "ipv4Loopback": "10.6.1.254",
+        "ipv4NodeSid": 100,
+        "isEdgeRouter": true,
+        "name": "device-cc37ab7cbde6",
+        "routerMac": "cc:37:ab:7c:bd:e6"
+      }
+    },
+    "of:0000cc37ab7cbf6c": {
+      "basic": {
+        "driver": "ofdpa3"
+      },
+      "segmentrouting": {
+        "adjacencySids": [],
+        "ipv4Loopback": "10.6.1.254",
+        "ipv4NodeSid": 101,
+        "isEdgeRouter": false,
+        "name": "device-cc37ab7cbf6c",
+        "routerMac": "cc:37:ab:7c:bf:6c"
       }
     }
   },
   "hosts": {
-    "3C:FD:FE:9E:95:98/None": {
+    "3C:FD:FE:9E:94:30/None": {
       "basic": {
         "ips": [
-          "10.6.2.3"
+          "10.6.1.1"
         ],
-        "location": "of:0000cc37ab7cba58/1"
+        "location": "of:0000cc37ab7cbde6/1"
       }
     },
     "3C:FD:FE:9E:98:68/None": {
@@ -70,12 +71,20 @@
         "location": "of:0000cc37ab7cbde6/2"
       }
     },
-    "3C:FD:FE:9E:94:30/None": {
+    "3C:FD:FE:9E:94:10/None": {
       "basic": {
         "ips": [
-          "10.6.1.1"
+          "10.6.1.3"
         ],
-        "location": "of:0000cc37ab7cbde6/1"
+        "location": "of:0000cc37ab7cbde6/5"
+      }
+    },
+    "3C:FD:FE:9E:95:98/None": {
+      "basic": {
+        "ips": [
+          "10.6.2.3"
+        ],
+        "location": "of:0000cc37ab7cba58/1"
       }
     },
     "3C:FD:FE:9E:94:28/None": {
@@ -85,8 +94,17 @@
         ],
         "location": "of:0000cc37ab7cba58/2"
       }
+    },
+    "3c:fd:fe:9e:99:40/None": {
+      "basic": {
+        "ips": [
+          "10.6.2.5"
+        ],
+        "location": "of:0000cc37ab7cba58/5"
+      }
     }
   },
+  "links": {},
   "ports": {
     "of:0000cc37ab7cbde6/1": {
       "interfaces": [
@@ -94,10 +112,12 @@
           "ips": [
             "10.6.1.254/24"
           ],
+          "vlan-native": 10,
           "vlan-tagged": [
-            220, 4000, 4090
-          ],
-          "vlan-native": 10
+            220,
+            4000,
+            4090
+          ]
         }
       ]
     },
@@ -107,10 +127,39 @@
           "ips": [
             "10.6.1.254/24"
           ],
+          "vlan-native": 10,
           "vlan-tagged": [
-            220, 4000, 4090
+            220,
+            4000,
+            4090
+          ]
+        }
+      ]
+    },
+    "of:0000cc37ab7cbde6/5": {
+      "interfaces": [
+        {
+          "ips": [
+            "10.6.1.254/24"
           ],
-          "vlan-native": 10
+          "vlan-native": 10,
+          "vlan-tagged": [
+            220,
+            4000,
+            4090
+          ]
+        }
+      ]
+    },
+    "of:0000cc37ab7cbde6/129": {
+      "interfaces": [
+        {
+          "name": "OLT1",
+          "vlan-tagged": [
+            220,
+            4000,
+            4090
+          ]
         }
       ]
     },
@@ -120,10 +169,12 @@
           "ips": [
             "10.6.2.254/24"
           ],
+          "vlan-native": 10,
           "vlan-tagged": [
-            220, 4000, 4090
-          ],
-          "vlan-native": 10
+            220,
+            4000,
+            4090
+          ]
         }
       ]
     },
@@ -133,24 +184,29 @@
           "ips": [
             "10.6.2.254/24"
           ],
+          "vlan-native": 10,
           "vlan-tagged": [
-            220, 4000, 4090
-          ],
-          "vlan-native": 10
+            220,
+            4000,
+            4090
+          ]
         }
       ]
     },
-    "of:0000cc37ab7cbde6/129": {
+    "of:0000cc37ab7cba58/5": {
       "interfaces": [
         {
-          "name": "OLT1",
+          "ips": [
+            "10.6.2.254/24"
+          ],
+          "vlan-native": 10,
           "vlan-tagged": [
-            220, 4000, 4090
+            220,
+            4000,
+            4090
           ]
         }
       ]
     }
-  },
-  "links": {},
-  "apps": {}
+  }
 }
